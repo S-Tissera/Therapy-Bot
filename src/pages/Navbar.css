@@ -1,0 +1,108 @@
+/* Navbar.css */
+.navbar-container {
+    background: rgba(24, 27, 32, 0.98);
+    backdrop-filter: blur(16px) saturate(180%);
+    padding: 0.8rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, rgba(109,213,237,0.15) 0%, rgba(33,147,176,0.1) 100%) 1;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: auto;
+}
+
+.navbar-logo {
+    height: 42px;
+    width: auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 4px rgba(33, 147, 176, 0.1));
+}
+
+.navbar-logo:hover {
+    transform: scale(1.08) rotate(-8deg);
+    filter: drop-shadow(0 4px 8px rgba(33, 147, 176, 0.2));
+}
+
+.app-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.8px;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(33, 147, 176, 0.15);
+    transition: all 0.3s ease;
+}
+
+.app-name::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, #6dd5ed 0%, transparent 100%);
+    opacity: 0.6;
+    transition: width 0.3s ease;
+}
+
+.navbar-logo-container:hover .app-name::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .navbar-logo {
+        height: 38px;
+    }
+    
+    .app-name {
+        font-size: 1.4rem;
+        letter-spacing: -0.5px;
+    }
+    
+    .navbar-logo-container {
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0.6rem 1rem;
+    }
+    
+    .navbar-logo {
+        height: 34px;
+    }
+    
+    .app-name {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-logo-container {
+        gap: 0.5rem;
+    }
+}
